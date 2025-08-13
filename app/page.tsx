@@ -45,7 +45,7 @@ export default function Home() {
     },
     { 
       value: '1,500', 
-      statText: 'AI scrapes your content this many times for every 1 visitor it sends back',
+      statText: 'number of times AI scrapes your content instead of sending a human to it',
       source: 'OpenAI traffic analysis / Web scrape-to-visit ratios, 2024'
     },
     { 
