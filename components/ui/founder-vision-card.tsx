@@ -29,7 +29,7 @@ export function FounderVisionCard({ className }: FounderVisionCardProps) {
       >
         <Badge 
           variant="secondary" 
-          className="absolute -top-3 right-4 bg-[#94D82D] text-white hover:bg-[#94D82D]/90 shadow-sm"
+          className="absolute -top-3 right-4 rounded-full bg-[#B4F64A] text-slate-900 hover:bg-[#A7E84F] border border-[#9EDD34] ring-1 ring-[#94D82D]/40 shadow-[0_6px_16px_rgba(148,216,45,0.35)] px-3 py-1 text-[12px] md:text-[13px] font-semibold"
         >
           Founder's Vision
         </Badge>
