@@ -13,6 +13,7 @@ interface SectionProps extends Omit<HTMLMotionProps<'section'>, 'children' | 'cl
   containerSize?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full';
   noPadding?: boolean;
   edgeFeather?: boolean;
+  contentVisibility?: 'auto' | 'visible' | 'hidden';
 }
 
 const sectionTransition: Transition = {
@@ -51,6 +52,7 @@ const Section = forwardRef<HTMLElement, SectionProps>(({
   containerSize = 'xl',
   noPadding = false,
   edgeFeather = true,
+  contentVisibility,
   ...props
 }, ref) => {
   const getBackgroundClass = () => {
@@ -93,6 +95,7 @@ const Section = forwardRef<HTMLElement, SectionProps>(({
         edgeClass(),
         className
       )}
+      style={{ contentVisibility: contentVisibility }}
       {...props}
       initial="hidden"
       whileInView="visible"

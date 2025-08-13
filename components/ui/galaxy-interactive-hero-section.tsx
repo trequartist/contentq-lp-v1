@@ -19,7 +19,10 @@ function HeroSplineBackground(): JSX.Element {
     if (typeof window === 'undefined') return;
 
     const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return; // keep fallback gradient, skip heavy 3D
+    if (prefersReducedMotion) return;
+
+    const deviceMemory = (navigator as any).deviceMemory || 4; // assume mid-tier if unknown
+    if (deviceMemory < 6) return; // skip heavy 3D on low-memory devices
 
     const load = () => {
       if ((window as any).SplineViewerDefined) {
@@ -41,7 +44,6 @@ function HeroSplineBackground(): JSX.Element {
       }
     };
 
-    // defer loading to idle time for smoother first paint
     if ('requestIdleCallback' in window) {
       (window as any).requestIdleCallback(load);
     } else {
@@ -58,7 +60,6 @@ function HeroSplineBackground(): JSX.Element {
           <div className="w-full h-[100svh] bg-gradient-to-br from-slate-900 via-black to-slate-800" />
         )}
       </div>
-      {/* Dark vignette + subtle kiwi glow to ensure legibility */}
       <div
         style={{
           position: 'absolute', top: 0, left: 0, width: '100%', height: '100dvh',
@@ -117,7 +118,6 @@ function RightIntroCard(): JSX.Element {
     <div className="hidden lg:block px-6 sm:px-0 self-center lg:translate-y-4 xl:translate-y-8">
       <div className="pointer-events-auto relative max-w-[460px] rounded-2xl border border-white/20 bg-gradient-to-b from-neutral-900/60 to-neutral-900/40 backdrop-blur-md shadow-[0_16px_60px_rgba(0,0,0,0.55)]">
         <div className="absolute -top-[1px] left-5 right-5 h-[2px] bg-gradient-to-r from-transparent via-[#94D82D] to-transparent opacity-90"></div>
-        {/* Complementary vertical accent */}
         <div className="absolute left-4 top-6 bottom-6 w-px bg-gradient-to-b from-[#94D82D33] via-[#94D82D66] to-[#94D82D33]" />
         <div className="p-7 relative">
           <div className="absolute -bottom-2 left-7 right-7 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
@@ -175,14 +175,19 @@ export function HeroSection(): JSX.Element {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Magnetic micro-interaction for CTA
   useEffect(() => {
     const btn = document.querySelector('.magnetic-cta') as HTMLElement | null;
     if (!btn) return;
+    let ticking = false;
     const onMove = (e: MouseEvent) => {
-      const rect = btn.getBoundingClientRect();
-      const mx = ((e.clientX - rect.left) / rect.width) * 100;
-      btn.style.setProperty('--mx', `${mx}%`);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const rect = btn.getBoundingClientRect();
+        const mx = ((e.clientX - rect.left) / rect.width) * 100;
+        btn.style.setProperty('--mx', `${mx}%`);
+        ticking = false;
+      });
     };
     window.addEventListener('mousemove', onMove, { passive: true });
     return () => window.removeEventListener('mousemove', onMove as any);

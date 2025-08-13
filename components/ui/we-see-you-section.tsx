@@ -25,16 +25,22 @@ function GlowCard({ children, className = "", glowColor = "blue" }: GlowCardProp
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let ticking = false;
     const handle = (e: PointerEvent) => {
-      const { clientX: x, clientY: y } = e;
-      if (!cardRef.current) return;
-      (cardRef.current.style as any).setProperty("--x", x.toFixed(2));
-      (cardRef.current.style as any).setProperty("--xp", (x / window.innerWidth).toFixed(2));
-      (cardRef.current.style as any).setProperty("--y", y.toFixed(2));
-      (cardRef.current.style as any).setProperty("--yp", (y / window.innerHeight).toFixed(2));
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const { clientX: x, clientY: y } = e;
+        if (!cardRef.current) { ticking = false; return; }
+        (cardRef.current.style as any).setProperty("--x", x.toFixed(2));
+        (cardRef.current.style as any).setProperty("--xp", (x / window.innerWidth).toFixed(2));
+        (cardRef.current.style as any).setProperty("--y", y.toFixed(2));
+        (cardRef.current.style as any).setProperty("--yp", (y / window.innerHeight).toFixed(2));
+        ticking = false;
+      });
     };
-    document.addEventListener("pointermove", handle);
-    return () => document.removeEventListener("pointermove", handle);
+    document.addEventListener("pointermove", handle, { passive: true });
+    return () => document.removeEventListener("pointermove", handle as any);
   }, []);
 
   const { base, spread } = glowColorMap[glowColor];

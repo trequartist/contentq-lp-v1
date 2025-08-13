@@ -52,7 +52,11 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
     const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return; // skip particles entirely
 
+    const isMobile = typeof navigator !== 'undefined' && /Mobi|Android/i.test(navigator.userAgent);
+
+    let active = true;
     const createParticle = () => {
+      if (!active) return;
       const container = document.querySelector('.floating-particles');
       if (!container) return;
       const particle = document.createElement('div');
@@ -63,13 +67,27 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
       particle.style.animationDelay = Math.random() * 8 + 's';
       particle.style.animationDuration = (10 + Math.random() * 6) + 's';
       particle.style.setProperty('--delay', Math.random() * 4 + 's');
-      container.appendChild(particle);
+      requestAnimationFrame(() => container.appendChild(particle));
       setTimeout(() => { if (particle.parentNode) { (particle.parentNode as HTMLElement).removeChild(particle); } }, 14000);
     };
 
-    // Lower density for smoother scroll
-    particleIntervalRef.current = setInterval(createParticle, 600);
-    return () => { if (particleIntervalRef.current) clearInterval(particleIntervalRef.current); };
+    const intervalMs = isMobile ? 900 : 600;
+    particleIntervalRef.current = setInterval(createParticle, intervalMs);
+
+    const onVisibility = () => { active = !document.hidden; };
+    document.addEventListener('visibilitychange', onVisibility);
+
+    const onScrollDistance = () => {
+      const y = window.scrollY;
+      active = y < 1400; // pause when far down the page
+    };
+    window.addEventListener('scroll', onScrollDistance, { passive: true });
+
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibility);
+      window.removeEventListener('scroll', onScrollDistance);
+      if (particleIntervalRef.current) clearInterval(particleIntervalRef.current);
+    };
   }, [isMounted]);
 
   // Build nav links depending on route
