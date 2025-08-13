@@ -25,7 +25,7 @@ const WhatWeDoSection = () => {
           </p>
           <BodyText className="text-slate-700 max-w-3xl mx-auto text-base md:text-lg" animate={false}>
             {"We don't just write about what you know. "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b6f46b] to-[#94D82D] font-semibold">We help you know what to write about.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6DAF1E] to-[#94D82D] font-semibold drop-shadow-[0_1px_0_rgba(0,0,0,0.35)]">We help you know what to write about.</span>
           </BodyText>
         </div>
 
