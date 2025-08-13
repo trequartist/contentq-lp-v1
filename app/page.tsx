@@ -40,7 +40,7 @@ export default function Home() {
   const stats = [
     { 
       value: '13', 
-      statText: 'number of pieces of content consumed by B2B buyers before sales',
+      statText: 'number of pieces of content consumed by B2B buyers before purchase',
       source: 'Forrester B2B Buyer Journey Report, 2024'
     },
     { 
