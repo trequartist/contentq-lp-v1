@@ -123,17 +123,14 @@ function RightIntroCard(): JSX.Element {
           <div className="absolute -bottom-2 left-7 right-7 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
           <div className="mb-1.5 inline-flex items-center gap-2">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#94D82D] shadow-[0_0_10px_2px_rgba(148,216,45,0.25)]"></span>
-            <span className="px-2 py-1 rounded-md border border-white/10 bg-white/5 backdrop-blur-sm text-[11px] md:text[12px] tracking-[0.14em] uppercase text-zinc-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">Introducing ContentQ</span>
-            <span className="text-[12px] md:text-[13px] tracking[0.02em] text-zinc-300">· For B2B Teams</span>
+            <span className="px-2 py-1 rounded-md border border-white/10 bg-white/5 backdrop-blur-sm text-[11px] md:text-[12px] tracking-[0.14em] uppercase text-zinc-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">Introducing ContentQ</span>
+            <span className="text-[12px] md:text-[13px] tracking-[0.02em] text-zinc-300">· For B2B Teams</span>
           </div>
           <p className="text-[16px] lg:text-[17px] leading-[1.75] bg-gradient-to-b from-zinc-50 via-zinc-100 to-zinc-300 bg-clip-text text-transparent drop-shadow-[0_8px_32px_rgba(0,0,0,0.45)] antialiased">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-300">ContentQ is a </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b6f46b] to-[#94D82D]">smart content system</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-300"> built specifically for how buyers find answers and trust brands in 2025. We help you craft </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-200">strategic stories</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-300"> that break through generic AI content—getting you discovered everywhere buyers look: </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b6f46b] to-[#94D82D]">ChatGPT, Google, and LinkedIn</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-300">.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-300">ContentQ is your </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b6f46b] to-[#94D82D]">AI Teammate for B2B content authority</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-300">. Working with human content strategists, we build your presence across founder LinkedIn and company blog—crafting stories that </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b6f46b] to-[#94D82D]">get you discovered everywhere buyers look: ChatGPT, Google, and LinkedIn.</span>
           </p>
         </div>
       </div>
