@@ -125,10 +125,7 @@ export default function Home() {
       {/* Hero Section - New Interactive version */}
       <HeroSection />
 
-      {/* Dark → Light divider to What We Do */}
-      <SectionDivider variant="dark-to-light" />
-
-      {/* The Shift Section (restored copy, compact visuals) */}
+      {/* Dark section: Shift */}
       <Section variant="dark" className="shift-section" style={{ backgroundColor: '#001233' }}>
         <div className="space-y-6 max-w-6xl mx-auto text-center">
           <SectionHeadline>
@@ -153,19 +150,19 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Light → Dark divider to Sprint */}
-      <SectionDivider variant="light-to-dark" />
+      {/* Dark → Light divider to What We Do */}
+      <SectionDivider variant="dark-to-light" />
 
       <WhatWeDoSection />
 
-      {/* Dark → Light divider to Results */}
-      <SectionDivider variant="dark-to-light" />
+      {/* Light → Dark divider to Sprint */}
+      <SectionDivider variant="light-to-dark" />
 
       {/* 90-Day Sprint Section */}
       <AuthoritySprintSection />
 
-      {/* Light → Dark divider to We See You */}
-      <SectionDivider variant="light-to-dark" />
+      {/* Dark → Light divider to Results */}
+      <SectionDivider variant="dark-to-light" />
 
       {/* Results That Matter Section */}
       <ResultsSection />
