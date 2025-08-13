@@ -2715,3 +2715,19 @@
 .section-edge-dark::before {
   background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 40%, transparent 100%);
 }
+
+/* One-time shimmer for attention badges */
+.badge-shimmer { position: relative; overflow: hidden; }
+.badge-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -40%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  animation: badge-shine 1.2s ease-out 0.6s 1 forwards;
+  pointer-events: none;
+}
+@keyframes badge-shine { from { left: -40%; } to { left: 140%; } }

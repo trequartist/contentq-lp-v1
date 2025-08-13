@@ -14,12 +14,10 @@ export function FounderVisionCard({ className }: FounderVisionCardProps) {
 
   return (
     <>
-      {/* Focus overlay when expanded */}
       {expandedFounder && (
         <div className="fixed inset-0 z-[60] bg-black/30 transition-opacity duration-300"></div>
       )}
 
-      {/* Founder note card */}
       <motion.div
         className={cn(
           "relative max-w-4xl mx-auto mt-8 rounded-2xl border border-slate-200/70 bg-white/80 backdrop-blur-md p-8",
@@ -27,22 +25,28 @@ export function FounderVisionCard({ className }: FounderVisionCardProps) {
           className
         )}
       >
-        <Badge 
-          variant="secondary" 
-          className="absolute -top-3 right-4 rounded-full bg-[#B4F64A] text-slate-900 hover:bg-[#A7E84F] border border-[#9EDD34] ring-1 ring-[#94D82D]/40 shadow-[0_6px_16px_rgba(148,216,45,0.35)] px-3 py-1 text-[12px] md:text-[13px] font-semibold"
+        <motion.div
+          initial={{ scale: 0.96, opacity: 0.9 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ type: 'spring', stiffness: 220, damping: 16 }}
+          className="absolute -top-3 right-4"
         >
-          Founder's Vision
-        </Badge>
+          <Badge 
+            variant="secondary" 
+            className="badge-shimmer rounded-full bg-[#B4F64A] text-slate-900 hover:bg-[#A7E84F] border border-[#9EDD34] ring-1 ring-[#94D82D]/40 shadow-[0_6px_16px_rgba(148,216,45,0.35)] px-3 py-1 text-[12px] md:text-[13px] font-semibold"
+          >
+            Founder's Vision
+          </Badge>
+        </motion.div>
         
         <div className="space-y-4 text-slate-800">
-          {/* Visible Content */}
           <p className="text-lg font-medium">💭 Why We Built This</p>
           
           <p className="text-base leading-relaxed">
             "We're building AI that actually knows you. Most people don't realize what's possible yet. AI can be so much more than a writing assistant. We're building systems with actual memory — that learn your voice, carry your context, and get smarter about your business every single day. Raunak led ML at Google Gemini. I've been obsessed with storytelling for years."
           </p>
 
-          {/* Toggle */}
           {!expandedFounder && (
             <button
               onClick={() => setExpandedFounder(true)}
@@ -53,7 +57,6 @@ export function FounderVisionCard({ className }: FounderVisionCardProps) {
             </button>
           )}
 
-          {/* Expanded Content */}
           <div className={cn(
             "transition-all duration-300 ease-linear overflow-hidden",
             expandedFounder ? "opacity-100 max-h-[2000px]" : "opacity-0 max-h-0"
@@ -81,7 +84,6 @@ export function FounderVisionCard({ className }: FounderVisionCardProps) {
             </div>
           </div>
 
-          {/* Signature pinned bottom */}
           <p className="text-slate-600 text-base">— Anish & Raunak (Co‑founders, KiwiQ AI)</p>
         </div>
       </motion.div>
