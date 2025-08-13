@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Section from "@/components/Section";
 import { cn } from "@/lib/utils";
-import { Cpu, Users } from "lucide-react";
+import { Cpu, Users, ChevronDown } from "lucide-react";
 import PrimaryCTA from "@/components/ui/primary-cta";
 
 interface MonthPlan {
@@ -146,7 +146,7 @@ export function AuthoritySprintSection(): JSX.Element {
                   )}
                 >
                   <button
-                    className="w-full text-left focus:outline-none"
+                    className="w-full text-left focus:outline-none group"
                     onClick={() => toggle(idx)}
                     onKeyDown={(e) => {
                       if (e.key === "Enter" || e.key === " ") {
@@ -168,8 +168,21 @@ export function AuthoritySprintSection(): JSX.Element {
                           <span className="text-white/90">Outcome:</span> {m.outcome}
                         </div>
                       </div>
-                      <span className="shrink-0 inline-flex items-center rounded-full border border-white/12 bg-white/8 px-2.5 py-1 text-[11px] font-medium text-white/85">
+                      <span className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-white/12 bg-white/8 px-2.5 py-1 text-[11px] font-medium text-white/85">
                         {m.time}
+                        <ChevronDown
+                          className={cn(
+                            "w-3.5 h-3.5 text-white/85 transition-transform duration-200",
+                            expanded ? "rotate-180" : "rotate-0"
+                          )}
+                        />
+                      </span>
+                    </div>
+                    {/* subtle micro-hint under header */}
+                    <div className="mt-2 opacity-80">
+                      <span className="inline-flex items-center gap-1 text-[11px] text-white/60 group-hover:text-white/80 transition-colors">
+                        <span className="inline-block h-1 w-1 rounded-full bg-[#94D82D] animate-pulse" />
+                        <span>Tap to {expanded ? "collapse" : "expand"}</span>
                       </span>
                     </div>
                   </button>
