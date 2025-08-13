@@ -12,6 +12,7 @@ interface SectionProps extends Omit<HTMLMotionProps<'section'>, 'children' | 'cl
   id?: string;
   containerSize?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full';
   noPadding?: boolean;
+  edgeFeather?: boolean;
 }
 
 const sectionTransition: Transition = {
@@ -49,6 +50,7 @@ const Section = forwardRef<HTMLElement, SectionProps>(({
   id,
   containerSize = 'xl',
   noPadding = false,
+  edgeFeather = true,
   ...props
 }, ref) => {
   const getBackgroundClass = () => {
@@ -66,6 +68,20 @@ const Section = forwardRef<HTMLElement, SectionProps>(({
     }
   };
 
+  const edgeClass = () => {
+    if (!edgeFeather) return undefined;
+    switch (variant) {
+      case 'dark':
+        return 'section-edge section-edge-dark';
+      case 'light':
+      case 'white':
+      case 'warm':
+        return 'section-edge section-edge-light';
+      default:
+        return undefined;
+    }
+  };
+
   return (
     <motion.section
       ref={ref}
@@ -74,6 +90,7 @@ const Section = forwardRef<HTMLElement, SectionProps>(({
         'relative w-full',
         getBackgroundClass(),
         !noPadding && 'section-padding',
+        edgeClass(),
         className
       )}
       {...props}

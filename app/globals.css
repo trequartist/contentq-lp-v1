@@ -2697,3 +2697,21 @@
 .card-scroll::-webkit-scrollbar-track { background: transparent; }
 .card-scroll::-webkit-scrollbar-thumb { background: rgba(148,216,45,0.35); border-radius: 9999px; }
 .card-scroll::-webkit-scrollbar-thumb:hover { background: rgba(148,216,45,0.55); }
+
+/* Section internal edge feathering (inspired by Apple/Linear) */
+.section-edge::before {
+  content: '';
+  position: absolute;
+  top: -1px; /* overlap by 1px to prevent seams */
+  left: 0;
+  right: 0;
+  height: 28px;
+  pointer-events: none;
+  z-index: 2;
+}
+.section-edge-light::before {
+  background: linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.03) 40%, transparent 100%);
+}
+.section-edge-dark::before {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 40%, transparent 100%);
+}

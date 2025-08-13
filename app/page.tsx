@@ -23,7 +23,6 @@ import ResultsSection from '@/components/ui/results-section';
 import WeSeeYouSection from '@/components/ui/we-see-you-section';
 import { CTA } from '@/components/ui/call-to-action';
 import { FounderVisionCard } from '@/components/ui/founder-vision-card';
-import SectionDivider from '@/components/ui/section-divider';
 
 // Replace legacy hero with new interactive hero section
 
@@ -125,7 +124,7 @@ export default function Home() {
       {/* Hero Section - New Interactive version */}
       <HeroSection />
 
-      {/* Dark section: Shift */}
+      {/* Dark section: Shift with internal feather */}
       <Section variant="dark" className="shift-section" style={{ backgroundColor: '#001233' }}>
         <div className="space-y-6 max-w-6xl mx-auto text-center">
           <SectionHeadline>
@@ -143,38 +142,23 @@ export default function Home() {
             showIndicators={false}
           />
           <div className="mt-10 mb-2 text-center">
-            <p className="inline-block text-lg md:text-xl tracking-tight text-white/80 bg-white/5 px-4 py-3 rounded-xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.12)] backdrop-blur-sm">
+            <p className="inline-block text-lg md:text-xl tracking-tight text-white/80 bg:white/5 px-4 py-3 rounded-xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.12)] backdrop-blur-sm">
               <span className="text-white/90">The game has changed.</span> The companies who figure out the new rules first will own their categories for the next decade.
             </p>
           </div>
         </div>
       </Section>
 
-      {/* Dark → Light divider to What We Do */}
-      <SectionDivider variant="dark-to-light" />
-
       <WhatWeDoSection />
-
-      {/* Light → Dark divider to Sprint */}
-      <SectionDivider variant="light-to-dark" />
 
       {/* 90-Day Sprint Section */}
       <AuthoritySprintSection />
 
-      {/* Dark → Light divider to Results */}
-      <SectionDivider variant="dark-to-light" />
-
       {/* Results That Matter Section */}
       <ResultsSection />
 
-      {/* Light → Dark divider to We See You */}
-      <SectionDivider variant="light-to-dark" />
-
       {/* We See You Section */}
       <WeSeeYouSection />
-
-      {/* Dark → Dark subtle divider before bottom CTA */}
-      <SectionDivider variant="dark-to-dark" />
 
       {/* Bottom Line Section */}
       <Section variant="dark" id="bottom-line" className="py-4 lg:py-6" style={{ backgroundColor: '#001233' }}>
