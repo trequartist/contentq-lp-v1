@@ -5,7 +5,7 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import LogoKiwiQ from './LogoKiwiQ';
 import { ArrowUpRight, Menu } from 'lucide-react';
 import { usePathname } from 'next/navigation';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 
 interface LayoutWrapperProps {
   children: ReactNode;
@@ -119,6 +119,7 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
               <span className="hidden sm:inline text-white/90 group-hover:text-white transition-colors tracking-tight">KiwiQ.AI</span>
             </a>
             <style>{`.group:hover svg { filter: drop-shadow(0 0 6px rgba(148,216,45,0.35)); }`}</style>
+            {/* Desktop nav */}
             <div className="hidden md:flex items-center gap-4">
               {navLinks.map((l) => (
                 l.type === 'section' ? (
@@ -139,20 +140,27 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
                 )
               ))}
             </div>
-            {/* Mobile menu trigger */}
+            {/* Mobile nav */}
             <div className="md:hidden">
               <Sheet>
                 <SheetTrigger asChild>
-                  <button aria-label="Open menu" className="inline-flex items-center justify-center rounded-lg bg-white/10 border border-white/15 text-white p-2">
+                  <button aria-label="Open menu" className="inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/10 text-white p-2 backdrop-blur-sm">
                     <Menu className="w-5 h-5" />
                   </button>
                 </SheetTrigger>
-                <SheetContent side="right" className="bg-[#0B0F18] text-white border-l border-white/10 w-[85%] max-w-sm">
+                <SheetContent side="left" className="bg-[#0A0C12] text-white border-white/10">
                   <nav className="mt-6 flex flex-col gap-3">
                     {navLinks.map((l) => (
-                      <a key={l.href} href={l.href} className="px-3 py-2 rounded-md hover:bg-white/5 active:bg-white/10 text-base">
-                        {l.label}
-                      </a>
+                      <SheetClose asChild key={l.href}>
+                        <a
+                          href={l.href}
+                          target={l.external ? '_blank' : undefined}
+                          rel={l.external ? 'noopener noreferrer' : undefined}
+                          className="text-base py-2 px-1 rounded-md hover:bg-white/5"
+                        >
+                          {l.label}
+                        </a>
+                      </SheetClose>
                     ))}
                   </nav>
                 </SheetContent>

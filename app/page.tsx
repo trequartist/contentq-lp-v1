@@ -125,7 +125,7 @@ export default function Home() {
       <HeroSection />
 
       {/* Dark section: Shift with internal feather */}
-      <Section variant="dark" className="shift-section" style={{ backgroundColor: '#001233' }}>
+      <Section variant="dark" className="shift-section sm-scroll-offset" style={{ backgroundColor: '#001233' }}>
         <div className="space-y-6 max-w-6xl mx-auto text-center">
           <SectionHeadline>
             <span className="text-white">The shift is already here.</span>
@@ -149,10 +149,21 @@ export default function Home() {
         </div>
       </Section>
 
-      <WhatWeDoSection />
-      <AuthoritySprintSection />
-      <ResultsSection />
-      <WeSeeYouSection />
+      <div id="what-we-do" className="sm-scroll-offset">
+        <WhatWeDoSection />
+      </div>
+
+      <div id="sprint" className="sm-scroll-offset">
+        <AuthoritySprintSection />
+      </div>
+
+      <div id="results" className="sm-scroll-offset">
+        <ResultsSection />
+      </div>
+
+      <div id="we-see-you" className="sm-scroll-offset">
+        <WeSeeYouSection />
+      </div>
 
       {/* Bottom Line Section */}
       <Section variant="dark" id="bottom-line" className="py-4 lg:py-6" style={{ backgroundColor: '#001233' }}>

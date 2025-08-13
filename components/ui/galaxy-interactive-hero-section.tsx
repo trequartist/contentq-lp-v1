@@ -19,7 +19,8 @@ function HeroSplineBackground(): JSX.Element {
     if (typeof window === 'undefined') return;
 
     const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
+    const isSmallScreen = window.matchMedia && window.matchMedia('(max-width: 767px)').matches;
+    if (prefersReducedMotion || isSmallScreen) return;
 
     const deviceMemory = (navigator as any).deviceMemory || 4; // assume mid-tier if unknown
     if (deviceMemory < 6) return; // skip heavy 3D on low-memory devices
