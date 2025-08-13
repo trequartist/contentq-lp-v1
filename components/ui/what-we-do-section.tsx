@@ -7,18 +7,28 @@ import { FeaturesSectionWithHoverEffects } from './feature-section-with-hover-ef
 
 const WhatWeDoSection = () => {
   return (
-    <Section variant="dark" id="what-we-do" style={{ backgroundColor: '#001233' }}>
+    <Section
+      variant="white"
+      id="what-we-do"
+      style={{
+        background: "linear-gradient(180deg, #F7F8FA 0%, #EFF1F5 100%)",
+      }}
+      className="py-12"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <SectionHeadline className="text-white mb-6">
+        <div className="text-center mb-12">
+          <SectionHeadline className="text-slate-900 mb-4">
             What We Actually Do
           </SectionHeadline>
-          <BodyText className="text-white/70 max-w-3xl mx-auto">
+          <p className="text-slate-900 text-xl md:text-2xl font-semibold max-w-3xl mx-auto mb-2">
+            We're your AI-powered content team that gets you cited everywhere buyers search.
+          </p>
+          <BodyText className="text-slate-700 max-w-3xl mx-auto text-base md:text-lg" animate={false}>
             We don't just write about what you know. We help you know what to write about.
           </BodyText>
         </div>
 
-        <FeaturesSectionWithHoverEffects />
+        <FeaturesSectionWithHoverEffects colorMode="light" />
       </div>
     </Section>
   );

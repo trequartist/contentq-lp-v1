@@ -22,7 +22,7 @@ export function ResultsCardsWithHover() {
       icon: <Users />,
     },
     {
-      metric: "New SQLs",
+      metric: "New Inbound Leads",
       title: "From Content",
       description: "Content that compounds and converts",
       icon: <Target />,

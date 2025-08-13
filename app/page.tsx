@@ -142,9 +142,12 @@ export default function Home() {
             }))}
             currentStatIndex={currentStatIndex}
             colorMode="light"
+            showIndicators={false}
           />
-          <div className="shift-question">
-            So where exactly are buyers finding you? Or your competitors?
+          <div className="mt-10 mb-2 text-center">
+            <p className="inline-block text-lg md:text-xl tracking-tight text-white/80 bg-white/5 px-4 py-3 rounded-xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.12)] backdrop-blur-sm">
+              <span className="text-white/90">The game has changed.</span> The companies who figure out the new rules first will own their categories for the next decade.
+            </p>
           </div>
         </div>
       </Section>
@@ -154,33 +157,27 @@ export default function Home() {
       {/* 90-Day Sprint Section */}
       <AuthoritySprintSection />
 
-      {/* Testimonial Section */}
-      <Section variant="dark" id="testimonial" className="lg:py-[60px] lg:px-[60px]" style={{ backgroundColor: '#001233' }}>
-        <div className="max-w-6xl mx-auto">
-          <Testimonial
-            quote="We're a startup with a handful of customers, not thousands. That means we'll work harder for your success than anyone else—because our survival depends on it."
-            authorName="Anish Acharya"
-            authorPosition="CEO & Founder"
-            className="py-0 text-white [&_p]:text-white [&_h5]:text-white/80 [&_h5:last-of-type]:text-white/60"
-          />
-        </div>
-      </Section>
-
       {/* Results That Matter Section */}
       <ResultsSection />
+
+      {/* Separator: light → dark */}
+      <div aria-hidden className="w-full matte-separator" />
 
       {/* We See You Section */}
       <WeSeeYouSection />
 
+      {/* Separator: dark → dark */}
+      <div aria-hidden className="w-full matte-separator" />
+
       {/* Bottom Line Section */}
-      <Section variant="dark" id="bottom-line" className="py-0" style={{ backgroundColor: '#001233' }}>
+      <Section variant="dark" id="bottom-line" className="py-4 lg:py-6" style={{ backgroundColor: '#001233' }}>
         <CTA
           badge="The Future is Now"
           title="The Future of B2B Discovery is Being Written Right Now"
           subtitle="Will you define the playbook or follow it?"
           description="ContentQ helps you build authority that dominates Google, gets cited by AI, and built trust on LinkedIn."
-          primaryButtonText="Start Building Authority – Free Trial"
-          secondaryButtonText="Book 15‑Min Strategy Call"
+          primaryButtonText="Get In Touch"
+          primaryHref="https://cal.com/banish/contentq-exploratory-call-with-anish"
         />
         <FounderVisionCard />
       </Section>

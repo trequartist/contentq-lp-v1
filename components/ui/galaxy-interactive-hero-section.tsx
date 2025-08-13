@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from 'react';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { TrustedByStrip } from '@/components/ui/trusted-by-strip';
 
 declare global {
   namespace JSX {
@@ -35,18 +37,18 @@ function HeroSplineBackground(): JSX.Element {
   }, []);
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100vh', pointerEvents: 'auto', overflow: 'hidden' }}>
+    <div style={{ position: 'relative', width: '100%', height: '110vh', pointerEvents: 'auto', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', inset: 0, filter: 'brightness(0.55) contrast(1.05) saturate(0.9)' }}>
         {ready ? (
-          <spline-viewer url="https://prod.spline.design/us3ALejTXl6usHZ7/scene.splinecode" style={{ width: '100%', height: '100vh' }} />
+          <spline-viewer url="https://prod.spline.design/us3ALejTXl6usHZ7/scene.splinecode" style={{ width: '100%', height: '110vh' }} />
         ) : (
-          <div className="w-full h-[100vh] bg-gradient-to-br from-slate-900 via-black to-slate-800" />
+          <div className="w-full h-[110vh] bg-gradient-to-br from-slate-900 via-black to-slate-800" />
         )}
       </div>
       {/* Dark vignette + subtle kiwi glow to ensure legibility */}
       <div
         style={{
-          position: 'absolute', top: 0, left: 0, width: '100%', height: '100vh',
+          position: 'absolute', top: 0, left: 0, width: '100%', height: '110vh',
           background: `
             radial-gradient(900px 360px at 38% 35%, rgba(148,216,45,0.08) 0%, rgba(148,216,45,0.03) 45%, rgba(0,0,0,0) 60%),
             linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.32) 30%, rgba(0,0,0,0.32) 70%, rgba(0,0,0,0.78) 100%),
@@ -86,16 +88,12 @@ function LeftCopy(): JSX.Element {
         </span>
       </div>
 
-      <div className="mt-8 pointer-events-auto flex flex-col sm:flex-row items-start space-y-3 sm:space-y-0 sm:space-x-3">
-        <button className="rounded-full px-6 sm:px-8 py-3 text-base font-semibold text-white bg-[rgba(148,216,45,0.18)] border border-[rgba(148,216,45,0.45)] hover:bg-[rgba(148,216,45,0.26)] hover:border-[rgba(148,216,45,0.6)] transition duration-300 w-full sm:w-auto backdrop-blur-sm shadow-[0_8px_24px_rgba(148,216,45,0.15)]">
-          Claim Your Authority
-        </button>
-        <button className="rounded-full px-6 sm:px-8 py-3 text-base font-medium text-zinc-200 hover:text-white bg-white/5 border border-white/15 hover:bg-white/8 hover:border-white/25 transition duration-300 flex items-center justify-center w-full sm:w-auto backdrop-blur-sm">
-          <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-          </svg>
-          15-Min Strategy Call
-        </button>
+      <div className="mt-8 pointer-events-auto flex flex-col items-start gap-2">
+        <a href="https://cal.com/banish/contentq-exploratory-call-with-anish" className="magnetic-cta relative overflow-hidden rounded-full px-7 sm:px-9 py-3 text-base font-semibold text-slate-900 bg-gradient-to-b from-[#B4F64A] to-[#94D82D] border border-[#9EDD34] shadow-[0_10px_28px_rgba(148,216,45,0.28)] transition-all duration-300 w-full sm:w-auto backdrop-blur-sm hover:shadow-[0_16px_40px_rgba(148,216,45,0.38)] hover:translate-y-[-1px] active:translate-y-0">
+          <span className="relative z-[2]">Get In Touch</span>
+          <span className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(100px_40px_at_var(--mx,50%)_-20%,rgba(255,255,255,0.35),transparent_60%)] transition-[background-position] duration-300" />
+        </a>
+        <p className="text-white/70 text-sm">Start Your 90-Day Authority Sprint</p>
       </div>
     </div>
   );
@@ -156,17 +154,33 @@ export function HeroSection(): JSX.Element {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Magnetic micro-interaction for CTA
+  useEffect(() => {
+    const btn = document.querySelector('.magnetic-cta') as HTMLElement | null;
+    if (!btn) return;
+    const onMove = (e: MouseEvent) => {
+      const rect = btn.getBoundingClientRect();
+      const mx = ((e.clientX - rect.left) / rect.width) * 100;
+      btn.style.setProperty('--mx', `${mx}%`);
+    };
+    window.addEventListener('mousemove', onMove);
+    return () => window.removeEventListener('mousemove', onMove);
+  }, []);
+
   return (
-    <section className="relative min-h-screen">
+    <section className="relative min-h-[110vh]">
       <div className="absolute inset-0 z-0 pointer-events-auto">
         <HeroSplineBackground />
       </div>
-      <div className="relative z-10 flex min-h-screen items-center pt-24 md:pt-28 lg:pt-32">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div ref={heroContentRef} className="pointer-events-none">
-            <HeroContent />
+      <div className="relative z-10 flex min-h-[110vh] items-center pt-28 md:pt-32 lg:pt-36 pb-12">
+                  <div className="container mx-auto px-4 md:px-6 lg:px-8">
+            <div ref={heroContentRef} className="pointer-events-none">
+              <HeroContent />
+              <div className="mt-8 md:mt-10 lg:mt-12 pointer-events-auto">
+                <TrustedByStrip />
+              </div>
+            </div>
           </div>
-        </div>
       </div>
     </section>
   );

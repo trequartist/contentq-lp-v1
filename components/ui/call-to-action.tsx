@@ -1,4 +1,4 @@
-import { MoveRight, PhoneCall } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import Button from "@/components/Button";
 
@@ -8,9 +8,8 @@ interface CTAProps {
   subtitle?: string;
   description: string;
   primaryButtonText: string;
-  secondaryButtonText: string;
   onPrimaryClick?: () => void;
-  onSecondaryClick?: () => void;
+  primaryHref?: string;
 }
 
 function CTA({
@@ -19,14 +18,13 @@ function CTA({
   subtitle,
   description,
   primaryButtonText,
-  secondaryButtonText,
   onPrimaryClick,
-  onSecondaryClick
+  primaryHref = "https://cal.com/banish/contentq-exploratory-call-with-anish",
 }: CTAProps) {
   return (
-    <div className="w-full py-8 lg:py-12">
+    <div className="w-full py-4 lg:py-6">
       <div className="container mx-auto">
-        <div className="flex flex-col text-center bg-[#001233] rounded-md p-4 lg:p-8 gap-6 items-center">
+        <div className="flex relative overflow-hidden text-center rounded-2xl p-5 lg:p-7 gap-5 items-center ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] night-sky flex-col">
           {badge && (
             <div>
               <Badge className="bg-[#94D82D] text-black hover:bg-[#94D82D]/90">
@@ -47,24 +45,19 @@ function CTA({
               {description}
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              variant="primary" 
+          <div className="flex flex-col items-center gap-2">
+            <Button
+              variant="primary"
               size="lg"
               onClick={onPrimaryClick}
+              href={primaryHref}
               className="gap-2"
             >
               {primaryButtonText} <MoveRight className="w-4 h-4" />
             </Button>
-            <Button 
-              variant="secondary" 
-              size="lg"
-              onClick={onSecondaryClick}
-              className="gap-2 border-white/20 text-white hover:bg-white/10"
-            >
-              {secondaryButtonText} <PhoneCall className="w-4 h-4" />
-            </Button>
+            <p className="text-white/70 text-sm">Start Your 90-Day Authority Sprint</p>
           </div>
+          <div className="bottom-fade" />
         </div>
       </div>
     </div>

@@ -22,7 +22,7 @@ export function FounderVisionCard({ className }: FounderVisionCardProps) {
       {/* Founder note card */}
       <motion.div
         className={cn(
-          "relative max-w-4xl mx-auto mt-14 rounded-2xl border border-slate-200/70 bg-white/80 backdrop-blur-md p-8",
+          "relative max-w-4xl mx-auto mt-8 rounded-2xl border border-slate-200/70 bg-white/80 backdrop-blur-md p-8",
           expandedFounder ? "z-[70]" : "z-10",
           className
         )}
@@ -46,9 +46,9 @@ export function FounderVisionCard({ className }: FounderVisionCardProps) {
           {!expandedFounder && (
             <button
               onClick={() => setExpandedFounder(true)}
-              className="group inline-flex items-center gap-2 text-[#94D82D] font-medium hover:text-[#85C326] transition-colors"
+              className="group inline-flex items-center gap-2 text-[#0EA5E9] font-semibold hover:text-[#38BDF8] transition-colors"
             >
-              Continue reading
+              Read our Vision
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </button>
           )}
@@ -73,7 +73,7 @@ export function FounderVisionCard({ className }: FounderVisionCardProps) {
               </p>
               <button
                 onClick={() => setExpandedFounder(false)}
-                className="mt-2 inline-flex items-center gap-2 text-[#94D82D] font-medium hover:text-[#85C326] transition-colors"
+                className="mt-2 inline-flex items-center gap-2 text-[#0EA5E9] font-semibold hover:text-[#38BDF8] transition-colors"
               >
                 Show less
                 <span className="transition-transform duration-300">↑</span>
@@ -82,7 +82,7 @@ export function FounderVisionCard({ className }: FounderVisionCardProps) {
           </div>
 
           {/* Signature pinned bottom */}
-          <p className="text-slate-500 text-base">— Anish, CEO (with Raunak, CTO)</p>
+          <p className="text-slate-600 text-base">— Anish & Raunak (Co‑founders, KiwiQ AI)</p>
         </div>
       </motion.div>
     </>
