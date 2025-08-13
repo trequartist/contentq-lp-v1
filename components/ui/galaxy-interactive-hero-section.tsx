@@ -17,38 +17,51 @@ function HeroSplineBackground(): JSX.Element {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if ((window as any).SplineViewerDefined) {
-      setReady(true);
-      return;
-    }
-    if (!document.getElementById('spline-viewer-script')) {
-      const script = document.createElement('script');
-      script.id = 'spline-viewer-script';
-      script.src = 'https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js';
-      script.async = true;
-      script.onload = () => {
-        (window as any).SplineViewerDefined = true;
+
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return; // keep fallback gradient, skip heavy 3D
+
+    const load = () => {
+      if ((window as any).SplineViewerDefined) {
         setReady(true);
-      };
-      document.head.appendChild(script);
+        return;
+      }
+      if (!document.getElementById('spline-viewer-script')) {
+        const script = document.createElement('script');
+        script.id = 'spline-viewer-script';
+        script.src = 'https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js';
+        script.async = true;
+        script.onload = () => {
+          (window as any).SplineViewerDefined = true;
+          setReady(true);
+        };
+        document.head.appendChild(script);
+      } else {
+        setReady(true);
+      }
+    };
+
+    // defer loading to idle time for smoother first paint
+    if ('requestIdleCallback' in window) {
+      (window as any).requestIdleCallback(load);
     } else {
-      setReady(true);
+      setTimeout(load, 200);
     }
   }, []);
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '110vh', pointerEvents: 'auto', overflow: 'hidden' }}>
+    <div style={{ position: 'relative', width: '100%', height: '100dvh', pointerEvents: 'auto', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', inset: 0, filter: 'brightness(0.55) contrast(1.05) saturate(0.9)' }}>
         {ready ? (
-          <spline-viewer url="https://prod.spline.design/us3ALejTXl6usHZ7/scene.splinecode" style={{ width: '100%', height: '110vh' }} />
+          <spline-viewer url="https://prod.spline.design/us3ALejTXl6usHZ7/scene.splinecode" style={{ width: '100%', height: '100dvh' }} />
         ) : (
-          <div className="w-full h-[110vh] bg-gradient-to-br from-slate-900 via-black to-slate-800" />
+          <div className="w-full h-[100svh] bg-gradient-to-br from-slate-900 via-black to-slate-800" />
         )}
       </div>
       {/* Dark vignette + subtle kiwi glow to ensure legibility */}
       <div
         style={{
-          position: 'absolute', top: 0, left: 0, width: '100%', height: '110vh',
+          position: 'absolute', top: 0, left: 0, width: '100%', height: '100dvh',
           background: `
             radial-gradient(900px 360px at 38% 35%, rgba(148,216,45,0.08) 0%, rgba(148,216,45,0.03) 45%, rgba(0,0,0,0) 60%),
             linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.32) 30%, rgba(0,0,0,0.32) 70%, rgba(0,0,0,0.78) 100%),
@@ -110,8 +123,8 @@ function RightIntroCard(): JSX.Element {
           <div className="absolute -bottom-2 left-7 right-7 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
           <div className="mb-1.5 inline-flex items-center gap-2">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#94D82D] shadow-[0_0_10px_2px_rgba(148,216,45,0.25)]"></span>
-            <span className="px-2 py-1 rounded-md border border-white/10 bg-white/5 backdrop-blur-sm text-[11px] md:text-[12px] tracking-[0.14em] uppercase text-zinc-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">Introducing ContentQ</span>
-            <span className="text-[12px] md:text-[13px] tracking-[0.02em] text-zinc-300">· For B2B Teams</span>
+            <span className="px-2 py-1 rounded-md border border-white/10 bg-white/5 backdrop-blur-sm text-[11px] md:text[12px] tracking-[0.14em] uppercase text-zinc-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">Introducing ContentQ</span>
+            <span className="text-[12px] md:text-[13px] tracking[0.02em] text-zinc-300">· For B2B Teams</span>
           </div>
           <p className="text-[16px] lg:text-[17px] leading-[1.75] bg-gradient-to-b from-zinc-50 via-zinc-100 to-zinc-300 bg-clip-text text-transparent drop-shadow-[0_8px_32px_rgba(0,0,0,0.45)] antialiased">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-300">ContentQ is a </span>
@@ -141,17 +154,25 @@ export function HeroSection(): JSX.Element {
   const heroContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const maxScroll = 400;
-      const y = window.pageYOffset;
-      if (heroContentRef.current) {
-        const opacity = 1 - Math.min(y / maxScroll, 1);
-        heroContentRef.current.style.opacity = String(opacity);
-        heroContentRef.current.style.transform = `translateY(${Math.min(y * 0.1, 24)}px)`;
-      }
+    let ticking = false;
+    const maxScroll = 400;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.pageYOffset;
+        if (heroContentRef.current) {
+          const opacity = 1 - Math.min(y / maxScroll, 1);
+          heroContentRef.current.style.opacity = String(opacity);
+          heroContentRef.current.style.transform = `translateY(${Math.min(y * 0.1, 24)}px)`;
+          heroContentRef.current.style.willChange = 'transform, opacity';
+        }
+        ticking = false;
+      });
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   // Magnetic micro-interaction for CTA
@@ -163,24 +184,24 @@ export function HeroSection(): JSX.Element {
       const mx = ((e.clientX - rect.left) / rect.width) * 100;
       btn.style.setProperty('--mx', `${mx}%`);
     };
-    window.addEventListener('mousemove', onMove);
-    return () => window.removeEventListener('mousemove', onMove);
+    window.addEventListener('mousemove', onMove, { passive: true });
+    return () => window.removeEventListener('mousemove', onMove as any);
   }, []);
 
   return (
-    <section className="relative min-h-[110vh]">
+    <section className="relative min-h-[100svh]">
       <div className="absolute inset-0 z-0 pointer-events-auto">
         <HeroSplineBackground />
       </div>
-      <div className="relative z-10 flex min-h-[110vh] items-center pt-28 md:pt-32 lg:pt-36 pb-12">
-                  <div className="container mx-auto px-4 md:px-6 lg:px-8">
-            <div ref={heroContentRef} className="pointer-events-none">
-              <HeroContent />
-              <div className="mt-8 md:mt-10 lg:mt-12 pointer-events-auto">
-                <TrustedByStrip />
-              </div>
+      <div className="relative z-10 flex min-h-[100svh] items-center pt-28 md:pt-32 lg:pt-36 pb-12">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div ref={heroContentRef} className="pointer-events-none">
+            <HeroContent />
+            <div className="mt-8 md:mt-10 lg:mt-12 pointer-events-auto">
+              <TrustedByStrip />
             </div>
           </div>
+        </div>
       </div>
     </section>
   );

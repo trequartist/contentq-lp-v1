@@ -66,8 +66,6 @@ export default function Home() {
 
   const startCycle = useCallback(() => {
     if (intervalIdRef.current) return; // Already running
-    
-    // Start interval
     intervalIdRef.current = setInterval(cycleStats, 3000);
   }, [cycleStats]);
 
@@ -122,8 +120,7 @@ export default function Home() {
   }, [isMounted, startCycle, pauseCycle, resumeCycle]);
 
   return (
-    <>
-      <main className="relative overflow-x-hidden">
+    <main>
       {/* Hero Section - New Interactive version */}
       <HeroSection />
 
@@ -184,7 +181,6 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
-      </main>
-    </>
+    </main>
   );
 }

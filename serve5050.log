@@ -273,3 +273,7 @@ digest: "1626457742"
  ✓ Compiled in 1363ms (1535 modules)
  ✓ Compiled in 616ms (1535 modules)
  ✓ Compiled in 642ms (1537 modules)
+ ✓ Compiled /not-found in 677ms (1528 modules)
+ ✓ Compiled in 788ms (1537 modules)
+ ✓ Compiled in 783ms (1537 modules)
+ ✓ Compiled in 610ms (1537 modules)
