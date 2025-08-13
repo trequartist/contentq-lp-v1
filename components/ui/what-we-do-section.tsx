@@ -24,7 +24,8 @@ const WhatWeDoSection = () => {
             We're your AI-powered content team that gets you cited everywhere buyers search.
           </p>
           <BodyText className="text-slate-700 max-w-3xl mx-auto text-base md:text-lg" animate={false}>
-            We don't just write about what you know. We help you know what to write about.
+            {"We don't just write about what you know. "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b6f46b] to-[#94D82D] font-semibold">We help you know what to write about.</span>
           </BodyText>
         </div>
 
