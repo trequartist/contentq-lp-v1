@@ -1,6 +1,6 @@
 import { MoveRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import Button from "@/components/Button";
+import PrimaryCTA from "@/components/ui/primary-cta";
 
 interface CTAProps {
   badge?: string;
@@ -45,18 +45,11 @@ function CTA({
               {description}
             </p>
           </div>
-          <div className="flex flex-col items-center gap-2">
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={onPrimaryClick}
-              href={primaryHref}
-              className="gap-2"
-            >
-              {primaryButtonText} <MoveRight className="w-4 h-4" />
-            </Button>
-            <p className="text-white/70 text-sm">Start Your 90-Day Authority Sprint</p>
-          </div>
+          <PrimaryCTA
+            href={primaryHref}
+            label={primaryButtonText}
+            mode="dark"
+          />
           <div className="bottom-fade" />
         </div>
       </div>

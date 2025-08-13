@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from '@/components/Section';
 import { SectionHeadline, BodyText } from '@/components/Typography';
+import PrimaryCTA from '@/components/ui/primary-cta';
 
 export default function ResultsSection() {
   const HIGHLIGHTS = [
@@ -47,6 +48,10 @@ export default function ResultsSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-center">
+          <PrimaryCTA mode="light" />
         </div>
 
         <p className="text-center text-slate-600 max-w-3xl mx-auto">

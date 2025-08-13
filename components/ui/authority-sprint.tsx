@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Section from "@/components/Section";
 import { cn } from "@/lib/utils";
 import { Cpu, Users } from "lucide-react";
-import Button from "@/components/Button";
+import PrimaryCTA from "@/components/ui/primary-cta";
 
 interface MonthPlan {
   title: string; // Foundation, Momentum, Scale
@@ -194,14 +194,7 @@ export function AuthoritySprintSection(): JSX.Element {
 
           {/* Bottom CTA */}
           <div className="text-center mt-6">
-            <Button
-              href="https://cal.com/banish/contentq-exploratory-call-with-anish"
-              size="lg"
-              variant="primary"
-              className="gap-2"
-            >
-              Get In Touch
-            </Button>
+            <PrimaryCTA mode="dark" />
           </div>
         </div>
       </div>

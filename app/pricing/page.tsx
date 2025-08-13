@@ -4,7 +4,7 @@ import React from "react";
 import Section from "@/components/Section";
 import { Footer } from "@/components/ui/large-name-footer";
 import { ArrowRight, Check, Crown, Rocket, Zap } from "lucide-react";
-import Button from "@/components/Button";
+import PrimaryCTA from "@/components/ui/primary-cta";
 
 function cn(...classes: (string | undefined | null | false)[]): string {
 	return classes.filter(Boolean).join(" ");
@@ -176,10 +176,9 @@ export default function PricingPage(): JSX.Element {
 										{/* Bottom fade hint for scroll */}
 										<div className="pointer-events-none absolute left-0 right-0 bottom-0 h-8 bg-gradient-to-t from-slate-50 to-transparent" />
 									</div>
-									<a href={plan.href} className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-2xl px-4 py-3 text-slate-900 bg-gradient-to-b from-[#B4F64A] to-[#94D82D] border border-[#9EDD34] shadow-[0_8px_24px_rgba(148,216,45,0.25)] hover:shadow-[0_12px_32px_rgba(148,216,45,0.35)]">
-										{plan.ctaText}
-										<ArrowRight className="w-4 h-4" />
-									</a>
+									<div className="mt-auto">
+										<PrimaryCTA href={plan.href} label={plan.ctaText} mode="light" expand />
+									</div>
 								</div>
 							</div>
 						))}
