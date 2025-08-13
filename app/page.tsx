@@ -149,24 +149,10 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section contentVisibility="auto">
-        <WhatWeDoSection />
-      </Section>
-
-      <Section contentVisibility="auto">
-        {/* 90-Day Sprint Section */}
-        <AuthoritySprintSection />
-      </Section>
-
-      <Section contentVisibility="auto">
-        {/* Results That Matter Section */}
-        <ResultsSection />
-      </Section>
-
-      <Section contentVisibility="auto">
-        {/* We See You Section */}
-        <WeSeeYouSection />
-      </Section>
+      <WhatWeDoSection />
+      <AuthoritySprintSection />
+      <ResultsSection />
+      <WeSeeYouSection />
 
       {/* Bottom Line Section */}
       <Section variant="dark" id="bottom-line" className="py-4 lg:py-6" style={{ backgroundColor: '#001233' }}>

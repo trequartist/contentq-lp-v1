@@ -2705,7 +2705,7 @@
   top: -1px; /* overlap by 1px to prevent seams */
   left: 0;
   right: 0;
-  height: 28px;
+  height: 24px;
   pointer-events: none;
   z-index: 2;
 }
