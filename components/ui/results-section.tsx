@@ -15,7 +15,7 @@ export default function ResultsSection() {
     <Section
       variant="white"
       id="results"
-      className="relative py-10 lg:py-14 overflow-hidden bg-gradient-to-b from-zinc-50 to-white"
+      className="relative py-10 lg:py-14 overflow-hidden bg-gradient-to-b from-zinc-50 to-white sm-scroll-offset"
     >
       <div className="space-y-10 max-w-6xl mx-auto">
         <div className="text-center space-y-6">

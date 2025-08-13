@@ -64,7 +64,7 @@ export function AuthoritySprintSection(): JSX.Element {
     <Section
       variant="dark"
       id="sprint"
-      className="py-8 lg:py-12 lg:px-[40px] relative overflow-hidden"
+      className="py-8 lg:py-12 lg:px-[40px] relative overflow-hidden sm-scroll-offset"
       style={{ backgroundColor: "#001233" }}
     >
       <div className="relative z-10 space-y-6">

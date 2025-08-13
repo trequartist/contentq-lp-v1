@@ -2762,3 +2762,7 @@
   50% { opacity: 0.4; transform: translateY(-1px); }
   100% { opacity: 0.3; filter: saturate(0.85); }
 }
+
+/* Mobile anchor scroll offset utility */
+.sm-scroll-offset { scroll-margin-top: 72px; }
+@media (min-width: 768px) { .sm-scroll-offset { scroll-margin-top: 96px; } }

@@ -192,7 +192,7 @@ export default function WeSeeYouSection(): JSX.Element {
     <Section
       variant="dark"
       id="we-see-you"
-      className="relative py-10 lg:py-[56px] lg:px-[60px] overflow-hidden"
+      className="relative py-10 lg:py-[56px] lg:px-[60px] overflow-hidden sm-scroll-offset"
       style={{ backgroundColor: "#001233" }}
     >
       {/* dark classy gradient wash */}
