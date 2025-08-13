@@ -83,7 +83,7 @@ function LeftCopy(): JSX.Element {
         Your Buyers Just <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-[#b6f46b] to-[#94D82D]">Changed</span> How They
         <br className="hidden sm:block" /> Buy.
       </h1>
-      <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white/85 drop-shadow-[0_6px_24px_rgba(0,0,0,0.35)]">
+      <h2 className="mt-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-white/85 drop-shadow-[0_6px_24px_rgba(0,0,0,0.35)]">
         Time to Change How You're <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-[#b6f46b] to-[#94D82D]">Found</span>.
       </h2>
 
@@ -102,7 +102,7 @@ function LeftCopy(): JSX.Element {
         </span>
       </div>
 
-      <div className="mt-8 pointer-events-auto flex flex-col items-start gap-2">
+      <div className="mt-7 pointer-events-auto flex flex-col items-start gap-2">
         <a href="https://cal.com/banish/contentq-exploratory-call-with-anish" className="magnetic-cta relative overflow-hidden rounded-full px-7 sm:px-9 py-3 text-base font-semibold text-slate-900 bg-gradient-to-b from-[#B4F64A] to-[#94D82D] border border-[#9EDD34] shadow-[0_10px_28px_rgba(148,216,45,0.28)] transition-all duration-300 w-full sm:w-auto backdrop-blur-sm hover:shadow-[0_16px_40px_rgba(148,216,45,0.38)] hover:translate-y-[-1px] active:translate-y-0">
           <span className="relative z-[2]">Get In Touch</span>
           <span className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(100px_40px_at_var(--mx,50%)_-20%,rgba(255,255,255,0.35),transparent_60%)] transition-[background-position] duration-300" />
@@ -198,11 +198,11 @@ export function HeroSection(): JSX.Element {
       <div className="absolute inset-0 z-0 pointer-events-auto">
         <HeroSplineBackground />
       </div>
-      <div className="relative z-10 flex min-h-[100svh] items-center pt-28 md:pt-32 lg:pt-36 pb-8">
+      <div className="relative z-10 flex min-h-[100svh] items-center pt-24 md:pt-28 lg:pt-32 pb-6">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div ref={heroContentRef} className="pointer-events-none">
             <HeroContent />
-            <div className="mt-6 md:mt-8 lg:mt-10 pointer-events-auto">
+            <div className="mt-4 md:mt-6 lg:mt-8 pointer-events-auto">
               <TrustedByStrip />
             </div>
           </div>
