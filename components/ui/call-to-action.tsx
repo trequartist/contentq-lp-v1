@@ -24,7 +24,7 @@ function CTA({
   return (
     <div className="w-full py-4 lg:py-6">
       <div className="container mx-auto">
-        <div className="flex relative overflow-hidden text-center rounded-2xl p-5 lg:p-7 gap-5 items-center ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] night-sky flex-col">
+        <div className="flex relative overflow-hidden text-center rounded-2xl p-5 lg:p-7 gap-5 items-center ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.45)] charcoal-future flex-col">
           {badge && (
             <div>
               <Badge className="bg-[#94D82D] text-black hover:bg-[#94D82D]/90">
