@@ -94,7 +94,7 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
   const defaultLinks = [
     { href: '#what-we-do', label: 'How It Works', type: 'section' as const },
     { href: '#sprint', label: '90-Day Plan', type: 'section' as const },
-    { href: '#results', label: 'Client Results', type: 'section' as const },
+    { href: '#results', label: 'Impact', type: 'section' as const },
     { href: '#we-see-you', label: 'Who We Help', type: 'section' as const },
     { href: '/pricing', label: 'Pricing', type: 'page' as const },
     { href: 'https://cal.com/banish/contentq-exploratory-call-with-anish', label: 'Book a call', type: 'page' as const, external: true },
