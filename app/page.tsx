@@ -23,6 +23,7 @@ import ResultsSection from '@/components/ui/results-section';
 import WeSeeYouSection from '@/components/ui/we-see-you-section';
 import { CTA } from '@/components/ui/call-to-action';
 import { FounderVisionCard } from '@/components/ui/founder-vision-card';
+import SectionDivider from '@/components/ui/section-divider';
 
 // Replace legacy hero with new interactive hero section
 
@@ -124,6 +125,9 @@ export default function Home() {
       {/* Hero Section - New Interactive version */}
       <HeroSection />
 
+      {/* Dark → Light divider to What We Do */}
+      <SectionDivider variant="dark-to-light" />
+
       {/* The Shift Section (restored copy, compact visuals) */}
       <Section variant="dark" className="shift-section" style={{ backgroundColor: '#001233' }}>
         <div className="space-y-6 max-w-6xl mx-auto text-center">
@@ -149,22 +153,31 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Light → Dark divider to Sprint */}
+      <SectionDivider variant="light-to-dark" />
+
       <WhatWeDoSection />
+
+      {/* Dark → Light divider to Results */}
+      <SectionDivider variant="dark-to-light" />
 
       {/* 90-Day Sprint Section */}
       <AuthoritySprintSection />
 
+      {/* Light → Dark divider to We See You */}
+      <SectionDivider variant="light-to-dark" />
+
       {/* Results That Matter Section */}
       <ResultsSection />
 
-      {/* Separator: light → dark */}
-      <div aria-hidden className="w-full matte-separator" />
+      {/* Light → Dark divider to We See You */}
+      <SectionDivider variant="light-to-dark" />
 
       {/* We See You Section */}
       <WeSeeYouSection />
 
-      {/* Separator: dark → dark */}
-      <div aria-hidden className="w-full matte-separator" />
+      {/* Dark → Dark subtle divider before bottom CTA */}
+      <SectionDivider variant="dark-to-dark" />
 
       {/* Bottom Line Section */}
       <Section variant="dark" id="bottom-line" className="py-4 lg:py-6" style={{ backgroundColor: '#001233' }}>

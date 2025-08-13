@@ -116,6 +116,36 @@
   }
 }
 
+/* Section Divider Utilities */
+.section-divider {
+  position: relative;
+  width: 100%;
+  height: 72px;
+  pointer-events: none;
+}
+
+.section-divider.light-to-dark {
+  background: linear-gradient(180deg, #EFF1F5 0%, rgba(239,241,245,0.7) 35%, rgba(0,18,51,0.45) 75%, #001233 100%);
+}
+
+.section-divider.dark-to-light {
+  background: linear-gradient(180deg, #001233 0%, rgba(0,18,51,0.45) 25%, rgba(239,241,245,0.7) 65%, #EFF1F5 100%);
+}
+
+.section-divider.dark-to-dark {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%);
+}
+
+@media (max-width: 768px) {
+  .section-divider {
+    height: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-divider { will-change: auto; }
+}
+
 /* Grain texture overlay */
 .grain-overlay::before {
   content: '';
@@ -694,8 +724,6 @@
   padding: 2rem 0;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Add subtle background pattern */
