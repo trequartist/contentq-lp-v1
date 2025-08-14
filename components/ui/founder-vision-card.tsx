@@ -63,9 +63,6 @@ export function FounderVisionCard({ className }: FounderVisionCardProps) {
           )}>
             <div className="space-y-4 pt-2">
               <p className="text-base leading-relaxed">
-                "We're building AI that actually knows you. Most people don't realize what's possible yet. AI can be so much more than a writing assistant. We're building systems with actual memory — that learn your voice, carry your context, and get smarter about your business every single day. Raunak led ML at Google Gemini. I've been obsessed with storytelling for years."
-              </p>
-              <p className="text-base leading-relaxed">
                 Here's what we realized: Telling your story effectively takes massive expertise and bandwidth. You need to understand every platform's language, every algorithm's preference, every audience's context. Few have the bandwidth to do this, and fewer still have the multi-platform expertise to do it right. That's where real AI intelligence changes everything — it becomes the bridge between what you know and what gets heard.
               </p>
               <p className="text-base leading-relaxed">
