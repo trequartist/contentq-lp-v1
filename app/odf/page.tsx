@@ -38,7 +38,7 @@ export default function ODFPage(): JSX.Element {
 				</div>
 			</section>
 
-			<section id="odf-form" className="relative py-10 md:py-12 bg-white text-slate-900">
+			<section id="odf-form" className="relative py-10 md:py-12 bg-white text-slate-900 sm-scroll-offset">
 				<div className="container mx-auto px-4 md:px-6 lg:px-8">
 					<div className="max-w-2xl">
 						<h2 className="text-2xl md:text-3xl font-bold tracking-tight">Tell us about you</h2>
