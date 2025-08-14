@@ -14,10 +14,7 @@ export default function ODFPage(): JSX.Element {
 				<div className="container mx-auto px-4 md:px-6 lg:px-8 pt-24 md:pt-28 lg:pt-32 pb-10">
 					<div className="max-w-3xl">
 						<div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 backdrop-blur-[2px]">
-							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-90">
-								<circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-								<path d="M10 7C12.8 7 15 9.2 15 12C15 14.8 12.8 17 10 17V7Z" fill="currentColor"/>
-							</svg>
+							<img src="/logos/ondeck.svg" alt="On Deck Founders" className="h-5 w-auto opacity-95" />
 							<span className="text-sm font-semibold tracking-tight">ODF × KiwiQ AI</span>
 						</div>
 						<h1 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
