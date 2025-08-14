@@ -105,7 +105,13 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
     { href: 'https://cal.com/banish/contentq-exploratory-call-with-anish', label: 'Book a call', type: 'page' as const, external: true },
   ];
 
-  const navLinks = pathname === '/pricing' ? pricingLinks : defaultLinks;
+  const odfLinks = [
+    { href: '/', label: 'Home', type: 'page' as const },
+    { href: '/pricing', label: 'Pricing', type: 'page' as const },
+    { href: 'https://cal.com/banish/contentq-exploratory-call-with-anish', label: 'Book a call', type: 'page' as const, external: true },
+  ];
+
+  const navLinks = pathname === '/pricing' ? pricingLinks : pathname?.startsWith('/odf') ? odfLinks : defaultLinks;
 
   return (
     <>
