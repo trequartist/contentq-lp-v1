@@ -40,8 +40,8 @@ export default function OdfHeroFresh(): JSX.Element {
             <div className="flex flex-col justify-center">
               <div className="inline-flex items-center gap-4 md:gap-5 rounded-full border border-white/15 bg-white/10 px-5 md:px-6 py-2.5 md:py-3 backdrop-blur-md ring-1 ring-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
                 <img src="/logos/ondeck.svg" alt="On Deck Founders" className="h-8 md:h-10 w-auto opacity-95" />
-                <span className="text-[14px] md:text-[15px] text-white/90 tracking-tight">On Deck Founders</span>
-                <span className="text-white/70">×</span>
+                <span className="text-[14px] md:text-[15px] text-white/90 tracking-tight">On Deck</span>
+                <span className="text-white/70">+</span>
                 <LogoKiwiQ className="h-8 md:h-10 w-8 md:w-10" title="KiwiQ.AI" />
                 <span className="text-[14px] md:text-[15px] text-white/90 tracking-tight">KiwiQ AI</span>
               </div>
