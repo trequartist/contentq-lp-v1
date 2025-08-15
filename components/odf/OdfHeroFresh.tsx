@@ -46,24 +46,39 @@ export default function OdfHeroFresh(): JSX.Element {
                 <span className="text-[14px] md:text-[15px] text-white/90 tracking-tight">KiwiQ AI</span>
               </div>
 
-              <h1 className="mt-5 text-3xl sm:text-4xl md:text-[40px] font-semibold leading-[1.2]">
-                <span className="text-white">The new B2B Content reality</span>
-              </h1>
-              <ul className="mt-4 space-y-2 text-[17px] md:text-[18px] text-white/85">
-                <li className="flex items-start gap-3"><span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-[#8FD14F]"></span>Everyone can create content</li>
-                <li className="flex items-start gap-3"><span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-[#8FD14F]"></span>Nobody can be heard</li>
-                <li className="flex items-start gap-3"><span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-[#8FD14F]"></span>Buyers trust what AI has to say</li>
-              </ul>
+              <div className="mt-5 relative max-w-[640px] rounded-2xl border border-white/12 bg-[#0A0A0A] p-6 md:p-7 shadow-[0_20px_60px_rgba(0,0,0,0.45)] ring-1 ring-white/5 overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#FACC15]" />
+                <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(800px 300px at 20% 0%, rgba(250,204,21,0.06), transparent 60%)" }} />
 
-              <p className="mt-6 text-[18px] md:text-[19px] text-white/90">Your move?</p>
+                <p className="text-[22px] md:text-[24px] font-extrabold uppercase tracking-tight text-white leading-[1.3]">
+                  AI GAVE EVERYONE A VOICE.<br />NOW NOBODY CAN BE HEARD.
+                </p>
 
-              <div className="mt-7 relative max-w-[560px] rounded-2xl border border-white/20 bg-gradient-to-b from-neutral-900/60 to-neutral-900/40 backdrop-blur-md shadow-[0_18px_60px_rgba(0,0,0,0.6)]">
-                <div className="absolute -top-[1px] left-5 right-5 h-[2px] bg-gradient-to-r from-transparent via-[#94D82D] to-transparent opacity-90"></div>
-                <div className="absolute left-4 top-6 bottom-6 w-px bg-gradient-to-b from-[#94D82D33] via-[#94D82D66] to-[#94D82D33]"></div>
-                <div className="p-6">
-                  <p className="text-[15px] md:text-[16px] leading-[1.75] text-transparent bg-clip-text bg-gradient-to-b from-zinc-50 via-zinc-200 to-zinc-300 antialiased">
-                    ContentQ combines AI teammates with human strategists to build your authority where modern buyers actually look: ChatGPT answers, Google results, LinkedIn feeds.
-                  </p>
+                <div className="mt-4 space-y-3 text-[16px] text-white/85">
+                  <p>Since November 2022, there&apos;s been more B2B content published than all of history before it.</p>
+                  <p>But we&apos;re not solving for volume. We&apos;re solving for share of mind.</p>
+                  <p>When every blog reads like it was written by the same person, how do you capture buyer mindshare?</p>
+                  <p>We&apos;re Anish &amp; Raunak. We believe this is the most fascinating problem in B2B right now.</p>
+                </div>
+
+                <div className="mt-5">
+                  <button
+                    onClick={() => setNoteOpen(true)}
+                    className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/8 px-4 py-2.5 text-sm md:text-[15px] text-white/90 hover:text-white transition-all hover:shadow-[0_0_0_2px_rgba(255,255,255,0.08)]"
+                  >
+                    Read why <span className="inline-block">→</span>
+                  </button>
+                </div>
+
+                <div className="my-5 h-px bg-white/10" />
+                <div className="text-sm text-white/85">ON DECK: $499 pilot (normally $799 – $2,999)</div>
+                <div className="mt-3">
+                  <a
+                    href="https://form.typeform.com/to/dub8wybg"
+                    className="inline-flex items-center rounded-full bg-[#FACC15] text-black px-6 py-3 font-semibold shadow-[0_10px_28px_rgba(250,204,21,0.28)] hover:shadow-[0_16px_40px_rgba(250,204,21,0.38)]"
+                  >
+                    Claim 1 of 10 Slots
+                  </a>
                 </div>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
