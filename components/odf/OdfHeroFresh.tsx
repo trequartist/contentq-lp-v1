@@ -37,7 +37,7 @@ export default function OdfHeroFresh(): JSX.Element {
         <div className="container mx-auto max-w-[1440px] px-4 md:px-6 lg:px-8 min-h-[600px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-stretch py-16 md:py-20">
             {/* LEFT PANEL */}
-            <div className="flex flex-col justify-center order-1 lg:order-2">
+            <div className="flex flex-col justify-center order-1 lg:order-1">
               <div className="inline-flex items-center gap-4 md:gap-5 rounded-full border border-white/15 bg-white/10 px-5 md:px-6 py-2.5 md:py-3 backdrop-blur-md ring-1 ring-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
                 <img src="/logos/ondeck.svg" alt="On Deck Founders" className="h-8 md:h-10 w-auto opacity-95" />
                 <span className="text-[14px] md:text-[15px] text-white/90 tracking-tight">On Deck</span>
@@ -98,7 +98,7 @@ export default function OdfHeroFresh(): JSX.Element {
             </div>
 
             {/* RIGHT PANEL (Collapsed card) */}
-            <div className="flex flex-col justify-center order-2 lg:order-1">
+            <div className="flex flex-col justify-center order-2 lg:order-2">
               <div className="relative rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] ring-1 ring-white/10 min-h-[420px] md:min-h-[480px] flex flex-col overflow-hidden">
                 {/* decorative accents */}
                 <div className="pointer-events-none absolute -top-[1px] left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
