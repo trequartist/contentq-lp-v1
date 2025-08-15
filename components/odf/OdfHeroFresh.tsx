@@ -77,13 +77,13 @@ export default function OdfHeroFresh(): JSX.Element {
                     <span className="block text-slate-700/80">Take a pause, and reflect on life post‑ChatGPT…</span>
                   </button>
                 </DialogTrigger>
-                <DialogContent className="fixed inset-0 z-50 w-full h-full max-w-none border-0 p-0 bg-gradient-to-b from-zinc-50 to-white text-slate-900 overflow-y-auto">
+                <DialogContent className="fixed inset-0 z-50 w-screen h-screen max-w-none left-0 top-0 translate-x-0 translate-y-0 border-0 p-0 rounded-none bg-gradient-to-b from-zinc-50 to-white text-slate-900 overflow-y-auto">
                   <div className="min-h-screen">
                     <div className="sticky top-0 z-10 flex items-center justify-between px-4 md:px-8 py-4 border-b border-zinc-200 bg-white/80 backdrop-blur">
-                      <div className="text-sm font-semibold tracking-tight text-zinc-700">Founder’s Note</div>
+                      <div className="text-sm md:text-base font-semibold tracking-tight text-zinc-700">Founder’s Note</div>
                       <a
                         href="#"
-                        className="rounded-full border border-zinc-300 bg-white px-3 py-1.5 text-sm text-zinc-700 hover:bg-zinc-50"
+                        className="rounded-full border border-zinc-300 bg-white px-3 py-1.5 text-sm text-zinc-700 hover:bg-zinc-50 shadow-sm"
                         onClick={(e) => {
                           e.preventDefault();
                           const closeBtn = document.querySelector('[data-radix-dialog-close]') as HTMLElement | null;
@@ -93,8 +93,8 @@ export default function OdfHeroFresh(): JSX.Element {
                         Close
                       </a>
                     </div>
-                    <div className="px-4 md:px-8 py-8">
-                      <div className="mx-auto max-w-3xl space-y-5 text-[1.05rem] leading-[1.9] text-zinc-800">
+                    <div className="px-4 md:px-8 py-10">
+                      <div className="mx-auto max-w-3xl space-y-6 text-[1.08rem] leading-[1.95] text-zinc-800">
                         <p>AI gave everyone a voice. Now nobody can be heard.</p>
                         <p>
                           Take a pause, and reflect on life post‑ChatGPT. Okay, a bit more specifically—reflect on its impact on B2B content
