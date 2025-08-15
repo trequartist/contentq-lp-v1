@@ -61,6 +61,20 @@ export default function OdfHeroFresh(): JSX.Element {
               <p className="mt-6 text-[17px] md:text-[18px] text-white/85 max-w-[52ch]">
                 ContentQ combines AI teammates with human strategists to build your authority where modern buyers actually look: ChatGPT answers, Google results, LinkedIn feeds.
               </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-white/85 backdrop-blur">
+                  <span className="mr-2 inline-block h-2 w-2 rounded-full bg-[#8FD14F]"></span>
+                  AI Citations
+                </span>
+                <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-white/85 backdrop-blur">
+                  <span className="mr-2 inline-block h-2 w-2 rounded-full bg-[#8FD14F]"></span>
+                  Search Rankings
+                </span>
+                <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-white/85 backdrop-blur">
+                  <span className="mr-2 inline-block h-2 w-2 rounded-full bg-[#8FD14F]"></span>
+                  Social Authority
+                </span>
+              </div>
             </div>
 
             {/* RIGHT PANEL (Collapsed card) */}
