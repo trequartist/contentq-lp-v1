@@ -47,7 +47,7 @@ export default function OdfHeroFresh(): JSX.Element {
               </div>
 
               <h1 className="mt-5 text-3xl sm:text-4xl md:text-[40px] font-semibold leading-[1.2]">
-                <span className="text-white">Post-ChatGPT reality check:</span>
+                <span className="text-white">The new B2B Content reality</span>
               </h1>
               <ul className="mt-4 space-y-2 text-[17px] md:text-[18px] text-white/85">
                 <li className="flex items-start gap-3"><span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-[#8FD14F]"></span>Everyone can create content</li>
