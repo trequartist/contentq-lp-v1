@@ -109,13 +109,13 @@ export default function OdfHeroFresh(): JSX.Element {
                   {/* Founders row with glass avatars and graceful fallback */}
                   <div className="mt-3 flex items-center gap-3 text-sm text-white/80">
                     <GlassAvatar
-                      sources={["/founders/anish.jpg", "/images/anish.jpg", "/images/anish.png"]}
+                      sources={["/founders/anish.png", "/founders/anish.jpg", "/images/anish.jpg", "/images/anish.png"]}
                       alt="Anish"
                       initials="A"
                       size={36}
                     />
                     <GlassAvatar
-                      sources={["/founders/raunak.jpg", "/images/raunak.jpg", "/images/raunak.png"]}
+                      sources={["/founders/raunak.png", "/founders/raunak.jpg", "/images/raunak.jpg", "/images/raunak.png"]}
                       alt="Raunak"
                       initials="R"
                       size={36}
