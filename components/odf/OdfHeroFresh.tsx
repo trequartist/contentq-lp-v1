@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Head from "next/head";
+/* head removed for app router */
 import PrimaryCTA from "@/components/ui/primary-cta";
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 import LogoKiwiQ from "@/components/LogoKiwiQ";
@@ -24,12 +24,6 @@ export default function OdfHeroFresh(): JSX.Element {
   }, []);
 
   return (
-    <>
-      <Head>
-        <link rel="preconnect" href="https://form.typeform.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://cal.com" crossOrigin="anonymous" />
-      </Head>
-
       <section
         className="relative overflow-hidden text-white"
         style={{ background: "#0A0A0A" }}
@@ -185,6 +179,5 @@ export default function OdfHeroFresh(): JSX.Element {
           </div>
         </div>
       </section>
-    </>
   );
 } 
