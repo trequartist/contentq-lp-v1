@@ -37,7 +37,19 @@ export default function OdfHeroFresh(): JSX.Element {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-stretch py-16 md:py-20">
             {/* LEFT PANEL */}
             <div className="flex flex-col justify-center">
-              <p className="text-[11px] tracking-[0.22em] text-white/80 uppercase">ON DECK FOUNDERS × KIWIQ AI</p>
+              <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 md:px-5 py-2 md:py-2.5 backdrop-blur-md ring-1 ring-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                <img src="/logos/ondeck.svg" alt="On Deck Founders" className="h-7 md:h-8 w-auto opacity-95" />
+                <span className="text-white/70">×</span>
+                {/** KiwiQ logomark */}
+                <span className="inline-flex items-center justify-center h-7 md:h-8 w-7 md:w-8 rounded-md bg-white/90">
+                  {/* Use the existing logomark */}
+                  <svg viewBox="0 0 32 32" className="h-5 md:h-6 w-5 md:w-6" aria-hidden="true">
+                    <circle cx="16" cy="16" r="14" fill="#0A0A0A"></circle>
+                    <path d="M16 6a10 10 0 100 20 10 10 0 000-20z" fill="#8FD14F"></path>
+                    <path d="M12.5 10.5h3.5c2.8 0 5 2.2 5 5s-2.2 5-5 5h-3.5V10.5z" fill="#0A0A0A"></path>
+                  </svg>
+                </span>
+              </div>
 
               <h1 className="mt-5 text-3xl sm:text-4xl md:text-[40px] font-semibold leading-[1.2]">
                 <span className="text-white">Post-ChatGPT reality check:</span>
