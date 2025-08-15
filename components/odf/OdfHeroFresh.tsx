@@ -84,28 +84,24 @@ export default function OdfHeroFresh(): JSX.Element {
 
             {/* RIGHT PANEL (Collapsed card) */}
             <div className="flex flex-col justify-center">
-              <div className="relative rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] ring-1 ring-white/10">
-                <p className="text-xs tracking-[0.18em] text-white/80 uppercase">WHY WE BUILT KIWIQ AI?</p>
-                <blockquote className="mt-3 text-[18px] md:text-[20px] font-semibold text-white">
-                  “AI gave everyone a voice.<br />Now nobody can be heard.”
-                </blockquote>
-                <p className="mt-3 text-sm md:text-[15px] text-white/80">
-                  Hi, we&apos;re Anish (ex‑Amazon) and Raunak (ex‑Google Gemini ML).
-                </p>
-                <button
-                  aria-label="Read why this matters"
-                  onClick={() => setNoteOpen(true)}
-                  className="mt-3 inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/8 px-3 py-2 text-sm text-white/85 hover:text-white transition-all hover:shadow-[0_0_0_2px_rgba(255,255,255,0.08)]"
-                >
-                  Read why this matters
-                  <span className="inline-block transition-transform group-hover:translate-x-0.5">→</span>
-                </button>
+              <div className="relative rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] ring-1 ring-white/10 min-h-[380px] md:min-h-[440px] flex flex-col">
+                <h3 className="text-lg md:text-xl font-semibold tracking-tight text-white">Why we are building KiwiQ AI?</h3>
+                <div className="mt-4">
+                  <button
+                    aria-label="Read a Note from the Founders"
+                    onClick={() => setNoteOpen(true)}
+                    className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/8 px-4 py-2.5 text-sm md:text-[15px] text-white/90 hover:text-white transition-all hover:shadow-[0_0_0_2px_rgba(255,255,255,0.08)]"
+                  >
+                    Read a Note from the Founders
+                    <span className="inline-block">→</span>
+                  </button>
+                </div>
 
-                <div className="mt-4 rounded-lg border border-white/10 bg-white/5 p-3 text-[13px] text-white/85">
+                <div className="mt-5 rounded-lg border border-white/10 bg-white/5 p-3 text-[13px] text-white/85">
                   🚀 Special: <span className="font-semibold text-white">10 Pilot slots</span>, $499 for 30 days
                 </div>
 
-                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div className="mt-auto pt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <PrimaryCTA
                     href="https://form.typeform.com/to/dub8wybg"
                     label="Submit Interest"
