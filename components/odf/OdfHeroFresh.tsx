@@ -56,7 +56,6 @@ export default function OdfHeroFresh(): JSX.Element {
               </ul>
 
               <p className="mt-6 text-[18px] md:text-[19px] text-white/90">Your move?</p>
-              <p className="text-[19px] md:text-[20px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#B7F274] to-[#8FD14F]">Own the answers AI gives.</p>
 
               <p className="mt-6 text-[17px] md:text-[18px] text-white/85 max-w-[52ch]">
                 ContentQ combines AI teammates with human strategists to build your authority where modern buyers actually look: ChatGPT answers, Google results, LinkedIn feeds.
