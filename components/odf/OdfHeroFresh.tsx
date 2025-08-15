@@ -38,12 +38,12 @@ export default function OdfHeroFresh(): JSX.Element {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-stretch py-16 md:py-20">
             {/* LEFT PANEL */}
             <div className="flex flex-col justify-center">
-              <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-4 md:px-5 py-2 md:py-2.5 backdrop-blur-md ring-1 ring-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-                <img src="/logos/ondeck.svg" alt="On Deck Founders" className="h-7 md:h-8 w-auto opacity-95" />
-                <span className="text-[13px] md:text-sm text-white/85 tracking-tight">On Deck Founders</span>
+              <div className="inline-flex items-center gap-4 md:gap-5 rounded-full border border-white/15 bg-white/10 px-5 md:px-6 py-2.5 md:py-3 backdrop-blur-md ring-1 ring-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                <img src="/logos/ondeck.svg" alt="On Deck Founders" className="h-8 md:h-10 w-auto opacity-95" />
+                <span className="text-[14px] md:text-[15px] text-white/90 tracking-tight">On Deck Founders</span>
                 <span className="text-white/70">×</span>
-                <LogoKiwiQ className="h-7 md:h-8 w-7 md:w-8" title="KiwiQ.AI" />
-                <span className="text-[13px] md:text-sm text-white/85 tracking-tight">KiwiQ AI</span>
+                <LogoKiwiQ className="h-8 md:h-10 w-8 md:w-10" title="KiwiQ.AI" />
+                <span className="text-[14px] md:text-[15px] text-white/90 tracking-tight">KiwiQ AI</span>
               </div>
 
               <h1 className="mt-5 text-3xl sm:text-4xl md:text-[40px] font-semibold leading-[1.2]">
