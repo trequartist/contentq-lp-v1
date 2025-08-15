@@ -16,16 +16,25 @@ export default function ODFHero(): JSX.Element {
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 					{/* Left column: partnership badge + descriptive copy */}
 					<div className="max-w-2xl lg:max-w-3xl">
-						<div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 backdrop-blur-[2px]">
+						<div className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 backdrop-blur-md ring-1 ring-white/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
 							<img src="/logos/ondeck.svg" alt="On Deck Founders" className="h-5 w-auto opacity-95" />
-							<span className="text-sm font-semibold tracking-tight">ODF × KiwiQ AI</span>
+							<span className="text-[13px] md:text-sm font-semibold tracking-tight">ODF × KiwiQ AI</span>
 						</div>
 						<p className="mt-6 text-white/85 text-base md:text-lg leading-relaxed">
 							Exclusive KiwiQ pilot for On Deck Founders. Build compounding authority with an AI + Human system that learns your voice and gets you discovered across Google, AI assistants, and LinkedIn.
 						</p>
-						<p className="mt-4 text-white/85 text-base md:text-lg leading-relaxed max-w-[46rem]">
-							<span className="text-[#B4F64A] font-semibold">ContentQ is your AI Teammate for B2B content authority.</span> Working with human content strategists, we build your presence across founder LinkedIn and company blog—crafting stories that <span className="text-[#B4F64A] font-semibold">get you discovered everywhere buyers look: ChatGPT, Google, and LinkedIn.</span>
-						</p>
+						<div className="mt-5 relative overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-b from-neutral-900/60 to-neutral-900/40 backdrop-blur-md shadow-[0_16px_60px_rgba(0,0,0,0.55)]">
+							<div className="absolute -top-[1px] left-5 right-5 h-[2px] bg-gradient-to-r from-transparent via-[#94D82D] to-transparent opacity-90"></div>
+							<div className="absolute left-4 top-6 bottom-6 w-px bg-gradient-to-b from-[#94D82D33] via-[#94D82D66] to-[#94D82D33]" />
+							<div className="p-5 md:p-6">
+								<p className="text-[15px] md:text-[16px] leading-[1.75] antialiased">
+									<span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-300">ContentQ is your </span>
+									<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b6f46b] to-[#94D82D]">AI Teammate for B2B content authority</span>
+									<span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-300">. Working with human content strategists, we build your presence across founder LinkedIn and company blog—crafting stories that </span>
+									<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b6f46b] to-[#94D82D]">get you discovered everywhere buyers look: ChatGPT, Google, and LinkedIn.</span>
+								</p>
+							</div>
+						</div>
 					</div>
 
 					{/* Right column: headline, chips, CTAs, collapsible founder's note */}
