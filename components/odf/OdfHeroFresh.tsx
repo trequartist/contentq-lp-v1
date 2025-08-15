@@ -5,7 +5,6 @@ import Head from "next/head";
 import PrimaryCTA from "@/components/ui/primary-cta";
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 import LogoKiwiQ from "@/components/LogoKiwiQ";
-import GlassAvatar from "@/components/ui/glass-avatar";
 
 function track(event: string, data?: Record<string, unknown>) {
   // Lightweight analytics shim; integrates with gtag if present
@@ -85,61 +84,41 @@ export default function OdfHeroFresh(): JSX.Element {
 
             {/* RIGHT PANEL (Collapsed card) */}
             <div className="flex flex-col justify-center">
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] ring-1 ring-white/10 min-h-[420px] md:min-h-[480px] flex flex-col">
-                {/* Subtle glints */}
-                <div className="pointer-events-none absolute -top-16 right-[-20%] h-[280px] w-[480px] rounded-full" style={{ background: "radial-gradient(240px 120px at 50% 50%, rgba(148,216,45,0.10), transparent 60%)" }} />
-                <div className="pointer-events-none absolute -bottom-24 left-[-15%] h-[260px] w-[460px] rounded-full" style={{ background: "radial-gradient(220px 110px at 50% 50%, rgba(148,216,45,0.06), transparent 65%)" }} />
+              <div className="relative rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] ring-1 ring-white/10 min-h-[420px] md:min-h-[480px] flex flex-col overflow-hidden">
+                {/* decorative accents */}
+                <div className="pointer-events-none absolute -top-[1px] left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                <div className="pointer-events-none absolute inset-y-6 left-4 w-[3px] rounded-full bg-gradient-to-b from-[#8FD14F] via-[#B7F274] to-[#8FD14F]/70" />
+                <div className="pointer-events-none absolute -top-3 right-4 text-white/10 text-[108px] leading-none select-none">“</div>
 
-                {/* Accent bars */}
-                <div className="absolute -top-[1px] left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-[#94D82D] to-transparent opacity-80" />
-                <div className="absolute left-4 top-6 bottom-6 w-px bg-gradient-to-b from-[#94D82D33] via-[#94D82D66] to-[#94D82D33]" />
+                <h3 className="pl-6 text-xl md:text-2xl font-semibold tracking-tight text-white">Why we are building KiwiQ AI?</h3>
 
-                <h3 className="text-lg md:text-xl font-semibold tracking-tight text-white">Why we are building KiwiQ AI?</h3>
-
-                {/* Quote preview */}
-                <div className="mt-4 text-white">
-                  <div className="text-[20px] md:text-[22px] font-semibold leading-snug">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/90">“AI gave everyone a </span>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B7F274] to-[#8FD14F]">voice</span>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/90">. Now nobody can be </span>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B7F274] to-[#8FD14F]">heard</span>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/90">.”</span>
-                  </div>
-
-                  {/* Founders row with glass avatars and graceful fallback */}
-                  <div className="mt-3 flex items-center gap-3 text-sm text-white/80">
-                    <GlassAvatar
-                      sources={["/founders/anish.png", "/founders/anish.jpg", "/images/anish.jpg", "/images/anish.png"]}
-                      alt="Anish"
-                      initials="A"
-                      size={36}
-                    />
-                    <GlassAvatar
-                      sources={["/founders/raunak.png", "/founders/raunak.jpg", "/images/raunak.jpg", "/images/raunak.png"]}
-                      alt="Raunak"
-                      initials="R"
-                      size={36}
-                    />
-                    <span>— Anish (ex‑Amazon) & Raunak (ex‑Google Gemini ML)</span>
+                {/* founders badge row */}
+                <div className="mt-4 pl-6 inline-flex items-center gap-3">
+                  <span className="relative inline-flex items-center justify-center h-8 w-8 rounded-full bg-gradient-to-b from-[#B7F274] to-[#8FD14F] ring-2 ring-white/20 text-black font-bold">A</span>
+                  <span className="relative inline-flex items-center justify-center h-8 w-8 rounded-full bg-gradient-to-b from-[#B7F274] to-[#8FD14F] ring-2 ring-white/20 text-black font-bold">R</span>
+                  <div className="flex items-center gap-2 text-[12px] md:text-[13px] text-white/80">
+                    <span className="rounded-full border border-white/15 bg-white/10 px-2 py-0.5">ex‑Amazon</span>
+                    <span className="rounded-full border border-white/15 bg-white/10 px-2 py-0.5">ex‑Google Gemini ML</span>
                   </div>
                 </div>
 
-                <div className="mt-5">
+                {/* trigger */}
+                <div className="mt-5 pl-6">
                   <button
                     aria-label="Read a Note from the Founders"
                     onClick={() => setNoteOpen(true)}
-                    className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/8 px-4 py-2.5 text-sm md:text-[15px] text-white/90 hover:text-white transition-colors hover:shadow-[0_0_0_2px_rgba(255,255,255,0.08)]"
+                    className="group inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/8 px-5 py-3 text-[15px] text-white/90 hover:text-white transition-all hover:shadow-[0_0_0_2px_rgba(255,255,255,0.08)]"
                   >
                     Read a Note from the Founders
-                    <span className="inline-block">→</span>
+                    <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                   </button>
                 </div>
 
-                <div className="mt-5 rounded-lg border border-white/10 bg-white/5 p-3 text-[13px] text-white/85">
+                <div className="mt-5 pl-6 pr-6 rounded-lg border border-white/10 bg-white/5 p-3 text-[13px] text-white/85">
                   🚀 Special: <span className="font-semibold text-white">10 Pilot slots</span>, $499 for 30 days
                 </div>
 
-                <div className="mt-auto pt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div className="mt-auto pt-5 pl-6 pr-6 grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <PrimaryCTA
                     href="https://form.typeform.com/to/dub8wybg"
                     label="Submit Interest"
