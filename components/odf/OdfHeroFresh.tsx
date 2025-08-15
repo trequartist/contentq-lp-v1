@@ -52,14 +52,20 @@ export default function OdfHeroFresh(): JSX.Element {
               <ul className="mt-4 space-y-2 text-[17px] md:text-[18px] text-white/85">
                 <li className="flex items-start gap-3"><span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-[#8FD14F]"></span>Everyone can create content</li>
                 <li className="flex items-start gap-3"><span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-[#8FD14F]"></span>Nobody can be heard</li>
-                <li className="flex items-start gap-3"><span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-[#8FD14F]"></span>Buyers trust AI recommendations</li>
+                <li className="flex items-start gap-3"><span className="mt-[6px] inline-block h-1.5 w-1.5 rounded-full bg-[#8FD14F]"></span>Buyers trust what AI has to say</li>
               </ul>
 
               <p className="mt-6 text-[18px] md:text-[19px] text-white/90">Your move?</p>
 
-              <p className="mt-6 text-[17px] md:text-[18px] text-white/85 max-w-[52ch]">
-                ContentQ combines AI teammates with human strategists to build your authority where modern buyers actually look: ChatGPT answers, Google results, LinkedIn feeds.
-              </p>
+              <div className="mt-7 relative max-w-[560px] rounded-2xl border border-white/20 bg-gradient-to-b from-neutral-900/60 to-neutral-900/40 backdrop-blur-md shadow-[0_18px_60px_rgba(0,0,0,0.6)]">
+                <div className="absolute -top-[1px] left-5 right-5 h-[2px] bg-gradient-to-r from-transparent via-[#94D82D] to-transparent opacity-90"></div>
+                <div className="absolute left-4 top-6 bottom-6 w-px bg-gradient-to-b from-[#94D82D33] via-[#94D82D66] to-[#94D82D33]"></div>
+                <div className="p-6">
+                  <p className="text-[15px] md:text-[16px] leading-[1.75] text-transparent bg-clip-text bg-gradient-to-b from-zinc-50 via-zinc-200 to-zinc-300 antialiased">
+                    ContentQ combines AI teammates with human strategists to build your authority where modern buyers actually look: ChatGPT answers, Google results, LinkedIn feeds.
+                  </p>
+                </div>
+              </div>
               <div className="mt-6 flex flex-wrap gap-3">
                 <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-white/85 backdrop-blur">
                   <span className="mr-2 inline-block h-2 w-2 rounded-full bg-[#8FD14F]"></span>
