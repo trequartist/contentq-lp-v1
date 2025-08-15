@@ -2,7 +2,6 @@
 
 import React from "react";
 import ODFHero from "@/components/odf/ODFHero";
-import FoundersNote from "@/components/odf/FoundersNote";
 import AuthorityStats from "@/components/odf/AuthorityStats";
 import IntroducingKiwiQ from "@/components/odf/IntroducingKiwiQ";
 import HowItWorks from "@/components/odf/HowItWorks";
@@ -15,7 +14,6 @@ export default function ODFPage(): JSX.Element {
 	return (
 		<main className="relative">
 			<ODFHero />
-			<FoundersNote />
 			<AuthorityStats />
 			<IntroducingKiwiQ />
 			<HowItWorks />
