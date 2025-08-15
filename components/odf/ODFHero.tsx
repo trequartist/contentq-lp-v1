@@ -31,7 +31,7 @@ export default function ODFHero(): JSX.Element {
 					{/* Right column: headline, chips, CTAs, collapsible founder's note */}
 					<div className="w-full max-w-xl lg:ml-auto rounded-2xl border border-white/12 bg-white/10 backdrop-blur-sm p-5 md:p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] ring-1 ring-white/10">
 						<h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-white">
-							For ODF Founders & Friends: Ready to prioritize content?
+							For ODF Founders & Friends
 						</h1>
 						<div className="mt-3 flex flex-wrap gap-2.5">
 							<span className="rounded-full bg-white/10 border border-white/15 px-2.5 py-1 text-xs text-white/90">AI Citations</span>
@@ -43,7 +43,7 @@ export default function ODFHero(): JSX.Element {
 							<PrimaryCTA
 								href="https://form.typeform.com/to/dub8wybg"
 								label="Join the KiwiQ AI Pilot"
-								caption="ODF founders get priority onboarding"
+								caption=""
 								mode="dark"
 								expand
 							/>

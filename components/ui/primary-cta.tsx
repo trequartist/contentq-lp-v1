@@ -36,7 +36,9 @@ export function PrimaryCTA({
       >
         {label}
       </a>
-      <p className={cn(captionClass, "text-sm")}>{caption}</p>
+      {caption && caption.trim().length > 0 ? (
+        <p className={cn(captionClass, "text-sm")}>{caption}</p>
+      ) : null}
     </div>
   );
 }
