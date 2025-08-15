@@ -84,13 +84,40 @@ export default function OdfHeroFresh(): JSX.Element {
 
             {/* RIGHT PANEL (Collapsed card) */}
             <div className="flex flex-col justify-center">
-              <div className="relative rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] ring-1 ring-white/10 min-h-[380px] md:min-h-[440px] flex flex-col">
+              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)] ring-1 ring-white/10 min-h-[420px] md:min-h-[480px] flex flex-col">
+                {/* Subtle glints */}
+                <div className="pointer-events-none absolute -top-16 right-[-20%] h-[280px] w-[480px] rounded-full" style={{ background: "radial-gradient(240px 120px at 50% 50%, rgba(148,216,45,0.10), transparent 60%)" }} />
+                <div className="pointer-events-none absolute -bottom-24 left-[-15%] h-[260px] w-[460px] rounded-full" style={{ background: "radial-gradient(220px 110px at 50% 50%, rgba(148,216,45,0.06), transparent 65%)" }} />
+
+                {/* Accent bars */}
+                <div className="absolute -top-[1px] left-6 right-6 h-[2px] bg-gradient-to-r from-transparent via-[#94D82D] to-transparent opacity-80" />
+                <div className="absolute left-4 top-6 bottom-6 w-px bg-gradient-to-b from-[#94D82D33] via-[#94D82D66] to-[#94D82D33]" />
+
                 <h3 className="text-lg md:text-xl font-semibold tracking-tight text-white">Why we are building KiwiQ AI?</h3>
-                <div className="mt-4">
+
+                {/* Quote preview */}
+                <div className="mt-4 text-white">
+                  <div className="text-[20px] md:text-[22px] font-semibold leading-snug">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/90">“AI gave everyone a </span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B7F274] to-[#8FD14F]">voice</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/90">. Now nobody can be </span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B7F274] to-[#8FD14F]">heard</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/90">.”</span>
+                  </div>
+
+                  {/* Founders row */}
+                  <div className="mt-3 flex items-center gap-3 text-sm text-white/80">
+                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-b from-white/90 to-white/70 text-[#0A0A0A] font-semibold">A</span>
+                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-b from-[#B7F274] to-[#8FD14F] text-[#0A0A0A] font-semibold">R</span>
+                    <span>— Anish (ex‑Amazon) & Raunak (ex‑Google Gemini ML)</span>
+                  </div>
+                </div>
+
+                <div className="mt-5">
                   <button
                     aria-label="Read a Note from the Founders"
                     onClick={() => setNoteOpen(true)}
-                    className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/8 px-4 py-2.5 text-sm md:text-[15px] text-white/90 hover:text-white transition-all hover:shadow-[0_0_0_2px_rgba(255,255,255,0.08)]"
+                    className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/8 px-4 py-2.5 text-sm md:text-[15px] text-white/90 hover:text-white transition-colors hover:shadow-[0_0_0_2px_rgba(255,255,255,0.08)]"
                   >
                     Read a Note from the Founders
                     <span className="inline-block">→</span>
