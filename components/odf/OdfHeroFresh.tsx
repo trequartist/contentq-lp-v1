@@ -5,6 +5,7 @@ import Head from "next/head";
 import PrimaryCTA from "@/components/ui/primary-cta";
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 import LogoKiwiQ from "@/components/LogoKiwiQ";
+import GlassAvatar from "@/components/ui/glass-avatar";
 
 function track(event: string, data?: Record<string, unknown>) {
   // Lightweight analytics shim; integrates with gtag if present
@@ -105,10 +106,20 @@ export default function OdfHeroFresh(): JSX.Element {
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/90">.”</span>
                   </div>
 
-                  {/* Founders row */}
+                  {/* Founders row with glass avatars and graceful fallback */}
                   <div className="mt-3 flex items-center gap-3 text-sm text-white/80">
-                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-b from-white/90 to-white/70 text-[#0A0A0A] font-semibold">A</span>
-                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-b from-[#B7F274] to-[#8FD14F] text-[#0A0A0A] font-semibold">R</span>
+                    <GlassAvatar
+                      sources={["/founders/anish.jpg", "/images/anish.jpg", "/images/anish.png"]}
+                      alt="Anish"
+                      initials="A"
+                      size={36}
+                    />
+                    <GlassAvatar
+                      sources={["/founders/raunak.jpg", "/images/raunak.jpg", "/images/raunak.png"]}
+                      alt="Raunak"
+                      initials="R"
+                      size={36}
+                    />
                     <span>— Anish (ex‑Amazon) & Raunak (ex‑Google Gemini ML)</span>
                   </div>
                 </div>
